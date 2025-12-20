@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: "${DB_USERNAME}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+      POSTGRES_DB: "${DB_DATABASE}"
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  minio:
+    image: minio/minio:latest
+    restart: always
+    environment:
+      MINIO_ROOT_USER: "${MINIO_ROOT_USER:-minioadmin}"
+      MINIO_ROOT_PASSWORD: "${MINIO_ROOT_PASSWORD:-minioadmin}"
+    ports:
+      - "${MINIO_PORT:-9000}:9000"
+      - "${MINIO_PORT_CONSOLE:-9001}:9001"
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    restart: always
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    ports:
+      - "${JAEGER_UI_PORT:-16686}:16686" # Jaeger UI
+      - "${JAEGER_HTTP_COLLECTOR_PORT:-14268}:14268" # Jaeger HTTP collector
+      - "${JAEGER_OTLP_GRPC_RECEIVER_PORT:-4317}:4317" # OTLP gRPC receiver
+      - "${JAEGER_OTLP_HTTP_RECEIVER_PORT:-4318}:4318" # OTLP HTTP receiver
+    volumes:
+      - jaeger_data:/badger
+
+volumes:
+  postgres_data:
+  minio_data:
+  jaeger_data:
