@@ -6,7 +6,7 @@ export class File {
   id!: string;
 
   @Column()
-  fileName!: string;
+  fileName?: string;
 
   @CreateDateColumn()
   createdAt!: Date;
