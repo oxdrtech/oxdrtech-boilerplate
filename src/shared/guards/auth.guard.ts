@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 import { ResFailedException } from "../errs";
-import { UserRepository } from "../../database/typeorm.repositories";
-import { UserRole } from "../../database/entities/user.entity";
 import { ValidateTokenAuthService } from "../../modules/auth/services/validateTokenAuth.service";
+import { UserRepository } from "../../infra/database/typeorm.repositories";
+import { UserRole } from "../../infra/database/entities/user.entity";
 
 /**
  * Níveis de acesso:

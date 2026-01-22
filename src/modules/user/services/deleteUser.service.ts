@@ -1,4 +1,4 @@
-import { UserRepository } from "../../../database/typeorm.repositories";
+import { UserRepository } from "../../../infra/database/typeorm.repositories";
 import { ResFailedException } from "../../../shared/errs";
 
 export class DeleteUserService {

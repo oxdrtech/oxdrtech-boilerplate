@@ -1,4 +1,4 @@
-import { UserRepository } from "../../../database/typeorm.repositories";
+import { UserRepository } from "../../../infra/database/typeorm.repositories";
 import { ResFailedException } from "../../../shared/errs";
 import { UpdateUserSchema } from "../domain/schemas/update-user.schema";
 import { userSelectedFields } from "../domain/selectors/user.selectors";

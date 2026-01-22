@@ -1,5 +1,5 @@
 import { ClientOptions } from "minio";
-import { configs } from "../../shared/configs/configs";
+import { configs } from "../../configs/configs";
 
 const normalizeUrl = (url: string): string => {
   let cleaned = url.replace(/^https?:\/\//i, '').replace(/\/+$/, '');

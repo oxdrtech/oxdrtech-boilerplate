@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { ResFailedException } from "../errs";
-import { UserRole } from "../../database/entities/user.entity";
+import { UserRole } from "../../infra/database/entities/user.entity";
 
 /**
  * Guard de usuário para rotas que recebem um parâmetro de alvo (ex.: :id)

@@ -1,5 +1,5 @@
-import { UserRole } from "../../../database/entities/user.entity";
-import { UserRepository } from "../../../database/typeorm.repositories";
+import { UserRole } from "../../../infra/database/entities/user.entity";
+import { UserRepository } from "../../../infra/database/typeorm.repositories";
 import { CreateUserService } from "../../user/services/createUser.service";
 import { SignupAuthSchema } from "../domain/schemas/signup-auth.schema";
 import { GenerateTokenAuthService } from "./generateTokenAuth.service";

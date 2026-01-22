@@ -1,4 +1,4 @@
-import { UserRepository } from "../../../database/typeorm.repositories";
+import { UserRepository } from "../../../infra/database/typeorm.repositories";
 import { userSelectedFields } from "../domain/selectors/user.selectors";
 
 export class FindUsersService {

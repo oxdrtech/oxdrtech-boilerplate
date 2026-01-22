@@ -1,9 +1,9 @@
-import { PgError } from '../../../database/types/pgError';
+import { PgError } from '../../../infra/database/types/pgError';
 import { ResFailedException } from '../../../shared/errs';
 import { CreateUserSchema } from '../domain/schemas/create-user.schema';
-import { User } from '../../../database/entities/user.entity';
+import { User } from '../../../infra/database/entities/user.entity';
 import { randomUUID } from 'crypto';
-import { UserRepository } from '../../../database/typeorm.repositories';
+import { UserRepository } from '../../../infra/database/typeorm.repositories';
 
 export class CreateUserService {
   private static readonly UNIQUE_CONSTRAINT_ERRORS = {

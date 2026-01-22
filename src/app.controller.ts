@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { configs } from './shared/configs/configs';
+import { configs } from './configs/configs';
 
 export class AppController {
   static setupRoutes(): Router {

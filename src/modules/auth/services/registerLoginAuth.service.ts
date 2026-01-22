@@ -1,7 +1,7 @@
 import { randomUUID } from "crypto";
-import { Login } from "../../../database/entities/login.entity";
-import { User } from "../../../database/entities/user.entity";
-import { LoginRepository } from "../../../database/typeorm.repositories";
+import { Login } from "../../../infra/database/entities/login.entity";
+import { User } from "../../../infra/database/entities/user.entity";
+import { LoginRepository } from "../../../infra/database/typeorm.repositories";
 
 export class RegisterLoginAuthService {
   static async execute(user: User, ipAddress: string, userAgent: string) {

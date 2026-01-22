@@ -306,7 +306,6 @@ volumes:
   postgres_data:
   minio_data:
   jaeger_data:
-
 ```
 
 ### Comandos
@@ -345,3 +344,14 @@ npm run dev
 npm run build
 npm start
 ```
+
+novo no readme, integração do jaegger
+npm install @opentelemetry/api @opentelemetry/sdk-node @opentelemetry/auto-instrumentations-node @opentelemetry/exporter-trace-otlp-http @opentelemetry/instrumentation @opentelemetry/resources@opentelemetry/semantic-conventions
+
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.52.1",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.57.1",
+    "@opentelemetry/instrumentation": "^0.57.1",
+    "@opentelemetry/resources": "^1.25.1",
+    "@opentelemetry/sdk-node": "^0.57.1",
+    "@opentelemetry/semantic-conventions": "^1.25.1",

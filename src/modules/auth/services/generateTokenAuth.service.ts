@@ -1,6 +1,6 @@
 import { sign, type SignOptions } from "jsonwebtoken";
-import { User } from "../../../database/entities/user.entity";
-import { configs } from "../../../shared/configs/configs";
+import { User } from "../../../infra/database/entities/user.entity";
+import { configs } from "../../../configs/configs";
 
 export class GenerateTokenAuthService {
   static async execute(user: User, resetPassword?: boolean) {

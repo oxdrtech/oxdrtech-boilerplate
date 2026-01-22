@@ -1,5 +1,5 @@
 import * as argon2 from 'argon2';
-import { UserRepository } from "../../../database/typeorm.repositories";
+import { UserRepository } from "../../../infra/database/typeorm.repositories";
 import { ResFailedException } from "../../../shared/errs";
 import { SigninAuthSchema } from "../domain/schemas/signin-auth.schema";
 import { GenerateTokenAuthService } from "./generateTokenAuth.service";

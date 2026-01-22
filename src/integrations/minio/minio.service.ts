@@ -1,7 +1,7 @@
 import { Client } from 'minio';
 import { Readable } from 'stream';
 import { minioConfig } from './minio.config';
-import { configs } from '../../shared/configs/configs';
+import { configs } from '../../configs/configs';
 
 export class MinioService {
   private static client: Client;

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import * as argon2 from "argon2";
-import { UserRole } from "../../../../database/entities/user.entity";
+import { UserRole } from "../../../../infra/database/entities/user.entity";
 
 export const createUserSchema = z.object({
   name: z.string().nonempty("Name é obrigatório"),

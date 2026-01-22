@@ -1,6 +1,7 @@
-import { FileRepository } from "../../database/typeorm.repositories";
-import { MinioService } from "../../integrations/minio/minio.service";
-import { generateFileName } from "./generateFileName";
+import { FileRepository } from "../../../infra/database/typeorm.repositories";
+import { generateFileName } from "../../../shared/utils/generateFileName";
+import { MinioService } from "../minio.service";
+
 
 export async function uploadMinioFile(
   folder: string,

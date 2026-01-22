@@ -1,10 +1,10 @@
 import { Application } from 'express';
-import { TypeormService } from './database/typeorm.service';
 import { MinioService } from './integrations/minio/minio.service';
 import { AppController } from './app.controller';
 import { responseFormatter } from './shared/middlewares/responseFormatter.middleware';
 import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from './modules/user/user.module';
+import { TypeormService } from './infra/database/typeorm.service';
 
 
 export class AppModule {

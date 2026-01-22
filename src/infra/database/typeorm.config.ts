@@ -1,8 +1,8 @@
 import { DataSource } from "typeorm";
-import { configs } from "../shared/configs/configs";
 import { Login } from "./entities/login.entity";
 import { User } from "./entities/user.entity";
 import { File } from "./entities/file.entity";
+import { configs } from "../../configs/configs";
 
 export const typeormConfig = new DataSource({
   type: "postgres",
@@ -18,6 +18,6 @@ export const typeormConfig = new DataSource({
   ],
   synchronize: configs.database.synchronize,
   logging: configs.database.logging,
-  migrations: ["src/shared/database/migrations/*.ts"],
+  migrations: ["src/shared/infra/database/migrations/*.ts"],
   migrationsRun: configs.database.migrationsRun,
 });
