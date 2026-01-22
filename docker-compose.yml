@@ -37,7 +37,19 @@ services:
     volumes:
       - jaeger_data:/badger
 
+  grafana:
+    image: grafana/grafana:latest
+    restart: always
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    depends_on:
+      - jaeger
+
 volumes:
   postgres_data:
   minio_data:
   jaeger_data:
+  grafana_data:
