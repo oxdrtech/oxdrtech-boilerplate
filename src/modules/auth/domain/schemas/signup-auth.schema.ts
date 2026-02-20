@@ -10,4 +10,4 @@ export const signupAuthSchema = z.object({
   }),
 });
 
-export type SignupAuthSchema = z.infer<typeof signupAuthSchema>;
+export type SignupAuthDTO = z.infer<typeof signupAuthSchema>;

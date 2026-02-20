@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { createUserSchema } from "./create-user.schema";
 
-export const updateUserSchema = createUserSchema.partial();
+export const updateUserSchema = createUserSchema.partial().omit({
+  password: true,
+});
 
-export type UpdateUserSchema = z.infer<typeof updateUserSchema>;
+export type UpdateUserDTO = z.infer<typeof updateUserSchema>;

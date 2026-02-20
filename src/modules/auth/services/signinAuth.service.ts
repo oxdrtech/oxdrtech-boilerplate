@@ -1,12 +1,12 @@
 import * as argon2 from 'argon2';
 import { UserRepository } from "../../../infra/database/typeorm.repositories";
 import { ResFailedException } from "../../../shared/errs";
-import { SigninAuthSchema } from "../domain/schemas/signin-auth.schema";
+import { SigninAuthDTO } from "../domain/schemas/signin-auth.schema";
 import { GenerateTokenAuthService } from "./generateTokenAuth.service";
 import { RegisterLoginAuthService } from './registerLoginAuth.service';
 
 export class SigninAuthService {
-  static async execute(data: SigninAuthSchema, ipAddress: string, userAgent: string) {
+  static async execute(data: SigninAuthDTO, ipAddress: string, userAgent: string) {
     try {
       const user = await UserRepository.findOne({
         where: { email: data.email },

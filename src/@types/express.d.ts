@@ -1,5 +1,5 @@
 import 'express';
-import { User } from '../modules/user/domain/entities/user.entity';
+import { User } from '../infra/database/entities/user.entity';
 
 declare global {
   namespace Express {

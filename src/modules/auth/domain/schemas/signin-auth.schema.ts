@@ -5,4 +5,4 @@ export const signinAuthSchema = z.object({
   password: z.string(),
 });
 
-export type SigninAuthSchema = z.infer<typeof signinAuthSchema>;
+export type SigninAuthDTO = z.infer<typeof signinAuthSchema>;

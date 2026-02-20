@@ -1,6 +1,6 @@
 import { PgError } from '../../../infra/database/types/pgError';
 import { ResFailedException } from '../../../shared/errs';
-import { CreateUserSchema } from '../domain/schemas/create-user.schema';
+import { CreateUserDTO } from '../domain/schemas/create-user.schema';
 import { User } from '../../../infra/database/entities/user.entity';
 import { randomUUID } from 'crypto';
 import { UserRepository } from '../../../infra/database/typeorm.repositories';
@@ -11,7 +11,7 @@ export class CreateUserService {
     email: 'Já existe um usuário com esse email!',
   } as const;
 
-  static async execute(body: CreateUserSchema) {
+  static async execute(body: CreateUserDTO) {
     try {
       const user = new User();
       Object.assign(user, {

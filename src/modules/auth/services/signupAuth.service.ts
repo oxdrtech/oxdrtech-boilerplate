@@ -1,12 +1,12 @@
 import { UserRole } from "../../../infra/database/entities/user.entity";
 import { UserRepository } from "../../../infra/database/typeorm.repositories";
 import { CreateUserService } from "../../user/services/createUser.service";
-import { SignupAuthSchema } from "../domain/schemas/signup-auth.schema";
+import { SignupAuthDTO } from "../domain/schemas/signup-auth.schema";
 import { GenerateTokenAuthService } from "./generateTokenAuth.service";
 import { RegisterLoginAuthService } from "./registerLoginAuth.service";
 
 export class SignupAuthService {
-  static async execute(data: SignupAuthSchema, ipAddress: string, userAgent: string) {
+  static async execute(data: SignupAuthDTO, ipAddress: string, userAgent: string) {
     try {
       const users = (await UserRepository.count()) > 0;
       const newUser = await CreateUserService.execute({

@@ -1,10 +1,11 @@
 import { Request, Response } from 'express';
 import { CreateUserService } from '../services/createUser.service';
-import { FindUsersService } from '../services/findUsers.service';
 import { FindUserService } from '../services/findUser.service';
 import { UpdateUserService } from '../services/updateUser.service';
 import { DeleteUserService } from '../services/deleteUser.service';
 import { RestoreUserService } from '../services/restoreUser.service';
+import { ResFailedException } from '../../../shared/errs';
+import { ListUserService } from '../services/listUser.service';
 
 export class UserController {
   static async create(req: Request, res: Response) {
@@ -13,12 +14,16 @@ export class UserController {
   }
 
   static async me(req: Request, res: Response) {
+    if (!req.user) throw new ResFailedException(
+      ['Usuário não autenticado'],
+      { status: 401 },
+    );
     const { password, ...me } = req.user;
     res.success(me);
   }
 
   static async list(_req: Request, res: Response) {
-    const result = await FindUsersService.execute();
+    const result = await ListUserService.execute();
     res.success(result);
   }
 
